@@ -13,9 +13,17 @@ class Artist
 
   # class methods
 
+  # CARE: deleting any item in the artist array will only be successful if the associated album has been deleted first.
+
   def self.delete_all()
     sql = "DELETE FROM artists"
     SqlRunner.run(sql)
+  end
+
+  def self.delete_one(id)
+    sql = "DELETE FROM artists WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   # instance methods
@@ -31,6 +39,8 @@ class Artist
     values  = [@name, @id]
     SqlRunner.run(sql, values)
   end
+
+
 
 end
 
