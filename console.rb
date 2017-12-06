@@ -11,7 +11,7 @@ artist1 = Artist.new({
   })
 
 artist2 = Artist.new({
-  'name' => "Justin Bieber"
+  'name' => "Pink"
   })
 
 artist1.save()
@@ -20,7 +20,7 @@ artist2.save()
 artist1.name = "Freddie Mercury"
 artist1.save()
 
-Artist.delete_one(artist2.id)
+#Artist.delete_one(artist2.id)
 
 album1 = Album.new({
   'title' => 'Joshua Tree',
@@ -32,3 +32,6 @@ album1.save()
 
 album1.genre = "Pop"
 album1.save()
+
+artists_list = Artist.find_all().map{|artist| Artist.new(artist)}
+p artists_list
