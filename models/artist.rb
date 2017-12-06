@@ -28,7 +28,7 @@ class Artist
 
   def self.find_all()
     sql = "SELECT id, name FROM artists"
-    return SqlRunner.run(sql)
+    return SqlRunner.run(sql).map{|artist| Artist.new(artist)}
   end
 
 

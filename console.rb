@@ -33,5 +33,8 @@ album1.save()
 album1.genre = "Pop"
 album1.save()
 
-artists_list = Artist.find_all().map{|artist| Artist.new(artist)}
+artists_list = Artist.find_all()
 p artists_list
+
+albums_list = Album.find_all()
+p albums_list
