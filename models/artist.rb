@@ -44,6 +44,12 @@ class Artist
     end
   end
 
+  def find_all_albums()
+    return Album.find_albums_by_artist(@id)
+  end
+
+
+
   private
   def insert()
     sql     = "INSERT INTO artists (name) VALUES ($1) RETURNING id"

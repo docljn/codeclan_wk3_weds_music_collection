@@ -24,6 +24,12 @@ class Album
     return SqlRunner.run(sql).map{|album| Album.new(album)}
   end
 
+  def self.find_albums_by_artist(artist_id)
+    sql = "SELECT id, title, genre, artist_id FROM albums WHERE artist_id = $1"
+    values = [artist_id]
+    return SqlRunner.run(sql, values).map{|album| Album.new(album)}
+  end
+
   # instance methods
 
   def save() # this means that you have no ambiguity, and no need to know whether the object you are dealing with is new or already exists in the database.
