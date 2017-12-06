@@ -3,6 +3,7 @@ require_relative('models/artist.rb')
 require_relative('models/album.rb')
 require_relative('db/sql_runner.rb')
 
+Album.delete_all()
 Artist.delete_all()
 
 artist1 = Artist.new({
@@ -17,7 +18,7 @@ artist1.save()
 artist2.save()
 
 artist1.name = "Freddie Mercury"
-artist1.update()
+artist1.save()
 
 Artist.delete_one(artist2.id)
 
@@ -27,4 +28,7 @@ album1 = Album.new({
   'artist_id' => artist1.id
   })
 
-  album1.save()
+album1.save()
+
+album1.genre = "Pop"
+album1.save()

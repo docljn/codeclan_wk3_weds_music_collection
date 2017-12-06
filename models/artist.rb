@@ -33,7 +33,17 @@ class Artist
 
   # instance methods
 
+
   def save()
+    if @id
+      update()
+    else
+      insert()
+    end
+  end
+
+  private
+  def insert()
     sql     = "INSERT INTO artists (name) VALUES ($1) RETURNING id"
     values  = [@name]
     @id     = SqlRunner.run(sql, values)[0]['id'].to_i
@@ -45,7 +55,7 @@ class Artist
     SqlRunner.run(sql, values)
   end
 
-
+  # don't add any public / protected methods here
 
 end
 

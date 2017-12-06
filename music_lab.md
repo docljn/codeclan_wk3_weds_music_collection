@@ -7,7 +7,6 @@ In their console they would like to be able to:
 * Create and Save Artists
 * Create and Save Albums
 * List All Artists/Albums
-
 * List all the albums they have by an artist
 * Show the artist any album belongs to
 
