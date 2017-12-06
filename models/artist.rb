@@ -26,6 +26,11 @@ class Artist
     SqlRunner.run(sql, values)
   end
 
+  # def self.find_all()
+  # end
+
+
+
   # instance methods
 
   def save()

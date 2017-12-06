@@ -20,3 +20,11 @@ artist1.name = "Freddie Mercury"
 artist1.update()
 
 Artist.delete_one(artist2.id)
+
+album1 = Album.new({
+  'title' => 'Joshua Tree',
+  'genre' => 'Rock',
+  'artist_id' => artist1.id
+  })
+
+  album1.save()
