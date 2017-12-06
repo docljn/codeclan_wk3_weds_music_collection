@@ -10,3 +10,6 @@ artist1 = Artist.new({
   })
 
 artist1.save()
+
+artist1.name = "Freddie Mercury"
+artist1.update()
