@@ -58,6 +58,7 @@ class Artist
   end
 
   def update()
+    # brackets are mandatory for multiple field updates, but cannot be used if there is only one field being updated.
     sql     = "UPDATE artists SET (name) = ($1) WHERE id = $2"
     values  = [@name, @id]
     SqlRunner.run(sql, values)
